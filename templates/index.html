@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Page Title</title>
+</head>
+<body>
+
+<h1>Пользователи в БД</h1>
+<table class="min-w-[50%] mb-4">
+    <thead class="border-b text-lg">
+        <tr>
+            <th class="border">Имя пользователя</th>
+            <th class="border">Телефон</th>
+            <th class="border">Email</th>
+        </tr>
+    </thead>
+    <tbody class="text-center text-sm" id="table-body">
+        {% for user in users %}
+        <tr>
+            <td class="border">{{ user.name }}</td>
+            <td class="border">{{ user.phone }}</td>
+            <td class="border">{{ user.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<form action="add_users.html" target="_blank">
+   <button>Добавить тользователя</button>
+  </form>
+</body>
+</html>
