@@ -1,33 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <script src="https://unpkg.com/htmx.org@1.8.0" integrity="sha384-cZuAZ+ZbwkNRnrKi05G/fjBX+azI9DNOkNYysZ0I/X5ZFgsmMiBXgDZof30F5ofc" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="{{ url_for('styles', path='/style.css') }}" rel="stylesheet">
+	<title>Document</title>
 </head>
 <body>
 
-<h1>Пользователи в БД</h1>
-<table class="min-w-[50%] mb-4">
-    <thead class="border-b text-lg">
-        <tr>
-            <th class="border">Имя пользователя</th>
-            <th class="border">Телефон</th>
-            <th class="border">Email</th>
-        </tr>
-    </thead>
-    <tbody class="text-center text-sm" id="table-body">
-        {% for user in users %}
-        <tr>
-            <td class="border">{{ user.name }}</td>
-            <td class="border">{{ user.phone }}</td>
-            <td class="border">{{ user.email }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<form action="add_users.html" target="_blank">
-   <button>Добавить тользователя</button>
-  </form>
+	<div class="container">
+		<div class="inner">
+			<div class="item">
+				<img src="{{ url_for('pink', path='/img.png') }}" alt="Burger" class="img">
+				<button class="btn" id="btn1">Add</button>
+			</div>
+			<div class="item">
+				<img src="{{ url_for('pink', path='/img.png') }}" alt="Burger" class="img">
+			    <button class="btn" id="btn2">Add</button>
+		    </div>
+			<div class="item">
+				<img src="{{ url_for('pink', path='/img.png') }}" alt="Burger" class="img">
+			    <button class="btn" id="btn3">Add</button>
+			</div>
+			<div class="item">
+				<img src="{{ url_for('pink', path='/img.png') }}" alt="Burger" class="img">
+				<button class="btn" id="btn4">Add</button>
+			</div>
+			<div class="item">
+				<img src="{{ url_for('pink', path='/img.png') }}" alt="Burger" class="img">
+				<button class="btn" id="btn5">Add</button>
+			</div>
+			<div class="item">
+				<img src="{{ url_for('pink', path='/img.png') }}" alt="Burger" class="img">
+				<button class="btn" id="btn6">Add</button>
+			</div>
+		</div>
+	</div>
+	<div class="usercard" id="usercard"></div>
+
+
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="{{ url_for('stat_js', path='/app.js') }}"></script>
 </body>
 </html>
+
+<!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->

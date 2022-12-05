@@ -16,9 +16,12 @@ app = FastAPI(title="MyfirstProject in FastAPI")
 app.include_router(users.router, prefix="/users", tags=["users"])
 
 templates = Jinja2Templates(directory="templates")
+app.mount("/static", StaticFiles(directory="static"), name="styles")
+app.mount("/static", StaticFiles(directory="static"), name="pink")
+app.mount("/static", StaticFiles(directory="static"), name="stat_js")
 
 
-@app.get("/index/", response_class=HTMLResponse)
+@app.get("/index2/", response_class=HTMLResponse)
 async def index(request: Request):
     users = await CRUDUser.get_all()
 
