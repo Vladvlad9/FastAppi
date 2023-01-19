@@ -25,7 +25,7 @@ app.mount("/static", StaticFiles(directory="static"), name="stat_js")
 async def index(request: Request):
     users = await CRUDUser.get_all()
 
-    context = {'request': request, 'users': users}
+    context = {'request': request,  'users': users}
     return templates.TemplateResponse("index.html", context=context)
 
 
